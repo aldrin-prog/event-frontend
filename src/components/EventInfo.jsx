@@ -54,7 +54,9 @@ const EventInfo = (props) => {
             <div className="container mx-auto px-4 py-8">
                 <div className="card bg-base-100 shadow-xl">
                     <div className="card-body">
-                        <div className="summernote-container" dangerouslySetInnerHTML={{ __html: event.description }} />
+                        {/* <div className="summernote-container" dangerouslySetInnerHTML={{ __html: event.description }} /> */}
+                        <h1 className="text-xl">Descripton</h1>
+                        {event.description}
                     </div>
                 </div>
 
