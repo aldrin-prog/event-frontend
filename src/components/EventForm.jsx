@@ -90,8 +90,8 @@ const EventForm = (props) => {
 
                 <div>
                     <label className="block text-sm font-medium mb-1">Description</label>
-                    {/* <textarea>{event.description}</textarea> */}
-                    { event.description!=''?<EditorComponent value={event.description}/>:<EditorComponent value=""/>}
+                    <textarea className="textarea" onChange={handleChange} name="description">{event.description}</textarea>
+                    {/* { event.description!=''?<EditorComponent value={event.description}/>:<EditorComponent value=""/>} */}
                     
                 </div>
 
