@@ -1,3 +1,5 @@
+import $ from 'jquery';
+window.jQuery = $;
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
 import "../styles/EditorComponent.module.css"; // Import your custom styles
