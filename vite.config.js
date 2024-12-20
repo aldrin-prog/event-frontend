@@ -6,6 +6,8 @@ export default defineConfig({
   plugins: [react()],
   base:'/',
   define: {
+    'window.jQuery': 'jquery',
+    'window.$': 'jquery',
     global: 'window', // Polyfill the global variable
   }
 })
