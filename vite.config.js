@@ -5,11 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base:'/',
-  optimizeDeps: {
-    include: ['jquery'], // Ensure jQuery is included in dependencies optimization
-  },
   define: {
-    'window.jQuery': 'jquery',  // Define jQuery globally
-    'window.$': 'jquery',       // Define $ globally
-  },
+    global: 'window', // Polyfill the global variable
+  }
 })
