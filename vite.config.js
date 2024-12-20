@@ -7,5 +7,6 @@ export default defineConfig({
   base:'/',
   define: {
     global: 'window', // Polyfill the global variable
-  }
+  },
+  resolve: { alias: { jquery: 'jquery/dist/jquery.min.js' } }
 })
