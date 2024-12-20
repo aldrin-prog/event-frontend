@@ -1,8 +1,8 @@
-import $ from 'jquery';
-window.jQuery = $;
+// import $ from 'jquery';
+// window.jQuery = $;
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
-import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
-import "../styles/EditorComponent.module.css"; // Import your custom styles
+// import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
+// import "../styles/EditorComponent.module.css"; // Import your custom styles
 import { useEvent } from '../context/AppContext';
 
 const EditorComponent = (props) => {
@@ -20,18 +20,19 @@ const EditorComponent = (props) => {
 
   // Memoize ReactSummernoteLite to prevent unnecessary re-renders
   const memoizedEditor = useMemo(() => (
-    <ReactSummernoteLite
-      id="summernote"
-      onChange={handleEditorChange}
-      onInit={(({ note }) => {
-        if (!isInitialized.current && value!='' ) {
-          isInitialized.current = true;
+    // <ReactSummernoteLite
+    //   id="summernote"
+    //   onChange={handleEditorChange}
+    //   onInit={(({ note }) => {
+    //     if (!isInitialized.current && value!='' ) {
+    //       isInitialized.current = true;
          
-          note.summernote('pasteHTML',value);
-        }
-      })}
+    //       note.summernote('pasteHTML',value);
+    //     }
+    //   })}
 
-    />
+    // />
+    <div></div>
   ), []); // Only recreate if handleEditorChange changes
   return (
     <div className="summernote-container">
