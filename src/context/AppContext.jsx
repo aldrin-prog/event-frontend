@@ -12,7 +12,7 @@ const AppProvider=({children})=>{
     const [booked,setBooked]=useState(null);
     const fetchEvents=async()=>{
         try {
-            const response=await fetch(`${BASE_URL}api/events`);
+            const response=await fetch(`${BASE_URL}/api/events`);
             const data=await response.json();
             setEvents(data);
         } catch (error) {
@@ -21,7 +21,7 @@ const AppProvider=({children})=>{
     }
     const deleteEvent=async (id)=>{
         try {
-            const eventDeleted=await fetch(`${BASE_URL}api/events/${id}`,{
+            const eventDeleted=await fetch(`${BASE_URL}/api/events/${id}`,{
                 method:"DELETE",
                 credentials:"include"
             })
@@ -32,7 +32,7 @@ const AppProvider=({children})=>{
     }
     const getEvent=async (id)=>{
         try {
-            const response= await fetch(`${BASE_URL}api/events/${id}`,{
+            const response= await fetch(`${BASE_URL}/api/events/${id}`,{
                 method:"GET",
                 credentials:"include"
             });
@@ -44,7 +44,7 @@ const AppProvider=({children})=>{
     }
     const getEventUser=async()=>{
         try {
-            const response=await fetch(`${BASE_URL}api/user/events`,{
+            const response=await fetch(`${BASE_URL}/api/user/events`,{
                 method:"GET",
                 credentials:"include"
             });
@@ -64,7 +64,7 @@ const AppProvider=({children})=>{
                 }
                 data.append(key, value);
             });
-            const newEvent= await fetch(`${BASE_URL}api/events`,{
+            const newEvent= await fetch(`${BASE_URL}/api/events`,{
                 method:'POST',
                 body:data,
                 credentials:"include",
@@ -81,7 +81,7 @@ const AppProvider=({children})=>{
     }
     const registerUser=async(data)=>{
         try {
-            const response=await fetch(`${BASE_URL}api/auth/register`,{
+            const response=await fetch(`${BASE_URL}/api/auth/register`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
@@ -96,7 +96,7 @@ const AppProvider=({children})=>{
     }
     const login=async(email,password)=>{
         try {
-            const response=await fetch(`${BASE_URL}api/auth/login`,{
+            const response=await fetch(`${BASE_URL}/api/auth/login`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
@@ -114,7 +114,7 @@ const AppProvider=({children})=>{
     }
     const createBooking=async (id)=>{
         try {
-            const response=await fetch(`${BASE_URL}api/events/${id}/create-booking`,
+            const response=await fetch(`${BASE_URL}/api/events/${id}/create-booking`,
                 {
                     credentials:"include",
                     method:"POST",
@@ -134,7 +134,7 @@ const AppProvider=({children})=>{
     }
     const logoutUser=async()=>{
         try {
-            const response=await fetch(`${BASE_URL}api/auth/logout`,{
+            const response=await fetch(`${BASE_URL}/api/auth/logout`,{
                 method:"POST",
                 credentials:"include"
             });
@@ -149,7 +149,7 @@ const AppProvider=({children})=>{
     }
     const updateUserProfile=async (formData)=>{
         try {
-            const response=await fetch(`${BASE_URL}api/user/update-profile`,{
+            const response=await fetch(`${BASE_URL}/api/user/update-profile`,{
                 method:"PUT",
                 credentials:"include",
                 headers:{
@@ -169,7 +169,7 @@ const AppProvider=({children})=>{
     }
     const uploadUserImage=async(formData)=>{
         try {
-            const response=await fetch(`${BASE_URL}api/user/update-profile-image`,{
+            const response=await fetch(`${BASE_URL}/api/user/update-profile-image`,{
                 method:"POST",
                 credentials:"include",
                 body:formData
@@ -191,7 +191,7 @@ const AppProvider=({children})=>{
                 }
                 data.append(key, value);
             });
-            const response= await fetch(`${BASE_URL}api/events/${id}`,{
+            const response= await fetch(`${BASE_URL}/api/events/${id}`,{
                 method:'PUT',
                 body:data,
                 credentials:"include",
@@ -206,7 +206,7 @@ const AppProvider=({children})=>{
     }
     const getUserBookings=async()=>{
         try {
-            const response=await fetch(`${BASE_URL}api/user/bookings`,{
+            const response=await fetch(`${BASE_URL}/api/user/bookings`,{
                 method:"GET",
                 credentials:"include"
             })
@@ -220,7 +220,7 @@ const AppProvider=({children})=>{
     }
     const isEventBooked=async(id)=>{
         try {
-            const response= await fetch(`${BASE_URL}api/bookings/get-user-event-booking`,{
+            const response= await fetch(`${BASE_URL}/api/bookings/get-user-event-booking`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
@@ -244,7 +244,7 @@ const AppProvider=({children})=>{
     }
     const verifyToken=async()=>{
         try {
-            const response=await fetch(`${BASE_URL}api/auth/verify-token`,{
+            const response=await fetch(`${BASE_URL}/api/auth/verify-token`,{
                 method:"GET",
                 credentials:"include"
             });
@@ -261,7 +261,7 @@ const AppProvider=({children})=>{
     }
     const createPaymentIntent=async(id)=>{
         try {
-            const response= await fetch(`${BASE_URL}api/bookings/${booked._id}/process-payment`,{
+            const response= await fetch(`${BASE_URL}/api/bookings/${booked._id}/process-payment`,{
                 method:"POST",
                 credentials:"include",
                 headers:{
@@ -280,7 +280,7 @@ const AppProvider=({children})=>{
     }
     const updateBookingPaymentStatus=async(id)=>{
         try {
-            const response=await fetch(`${BASE_URL}api/bookings/${id}/update-payment-status`,{
+            const response=await fetch(`${BASE_URL}/api/bookings/${id}/update-payment-status`,{
                 method:"PUT",
                 credentials:"include",
                 headers:{
