@@ -16,7 +16,7 @@ const AddEvent=()=>{
             closeOnClickOutside: false,
           });
       
-          setIsProcessing(true);
+        setIsProcessing(true);
         try {
             const res=await addNewEvent();
             if(!res)
