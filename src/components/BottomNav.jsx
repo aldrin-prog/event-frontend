@@ -1,4 +1,4 @@
-import { CalendarCog, HomeIcon, User } from "lucide-react";
+import { CalendarClock, CalendarCog, HomeIcon, User } from "lucide-react";
 
 const BottomNav=()=>{
     return (<div className="btm-nav md:hidden">
@@ -10,6 +10,9 @@ const BottomNav=()=>{
         </a>
         <a href="/events">
         <CalendarCog />
+        </a>
+        <a href="/my-bookings">
+        <CalendarClock />
         </a>
       </div>)
 }
