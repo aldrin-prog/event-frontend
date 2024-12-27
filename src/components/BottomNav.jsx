@@ -2,15 +2,15 @@ import { CalendarCog, HomeIcon, User } from "lucide-react";
 
 const BottomNav=()=>{
     return (<div className="btm-nav md:hidden">
-        <button>
+        <a href="/">
           <HomeIcon/>
-        </button>
-        <button>
+        </a>
+        <a href="/profile">
           <User/>
-        </button>
-        <button>
+        </a>
+        <a href="/events">
         <CalendarCog />
-        </button>
+        </a>
       </div>)
 }
 export default BottomNav;
